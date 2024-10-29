@@ -213,13 +213,13 @@ export default function RightSection(props) {
               background: 'white'
             }}
           >
-            <p style={{ color: '#000', lineHeight: '25px' }}>
+            <div style={{ color: '#000', lineHeight: '25px' }}>
               Dear Admin,
               <br />
               You have a new enquiry.
               <br />
               Please see details:
-            </p>
+            </div>
           </div>
           <table
             ref={tableRef}

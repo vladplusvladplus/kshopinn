@@ -74,7 +74,7 @@ export default function Allservicecards(props) {
         style={{
           background: 'rgb(139,25,146)',
           background:
-            'linear-gradient(77deg, rgba(139,25,146,1) 26%, rgba(127,13,49,1) 99%, rgba(127,13,49,1) 100%)',
+            'linear-gradient(77deg, rgba(139,25,146,1) 26%, rgba(127,13,49,1) 99%, rgba(127,13,49,1) 100%)'
         }}
       >
         <div className="w-full h-[90px] flex relative z-20  border-solid border-b-2">
@@ -82,16 +82,16 @@ export default function Allservicecards(props) {
             <i className={`${data.icon} text-[50px] iconn`}></i>
           </div>
           <div className="ml-[10px] flex flex-col justify-center ">
-            <p className="uppercase hover:text-[#CCC] font-acme font-normal text-[22px] text-white">
+            <div className="uppercase hover:text-[#CCC] font-acme font-normal text-[22px] text-white">
               {data.heading}
-            </p>
+            </div>
           </div>
         </div>
         <div className="mt-[15px] z-20 relative w-[100%] flex flex-col gap-[30px]">
-          <p
+          <div
             className="text-white leading-[26px] text-[15px] font-normal mb-[5px] font-inter"
             dangerouslySetInnerHTML={{ __html: text }}
-          ></p>
+          ></div>
           <button className="mt-[10px]">
             <Link
               href={data.url != null ? data.url : '/'}
@@ -108,21 +108,21 @@ export default function Allservicecards(props) {
       <div className="relative  bg-white z-10 w-full h-full  hover:scale-105 duration-500">
         <div className="w-full h-[42px] bg-[#30B1C0] rounded-t-[13px]  flex relative justify-center items-center z-20  border-solid border-b-2">
           <div className="  flex flex-col ">
-            <p className="uppercase hover:text-[#CCC] font-acme font-normal text-[22px] text-[#fff]">
+            <div className="uppercase hover:text-[#CCC] font-acme font-normal text-[22px] text-[#fff]">
               {data.heading}
-            </p>
+            </div>
           </div>
         </div>
         <div className=" z-20 relative w-[100%] flex  flex-col gap-[30px]">
-          <p
+          <div
             className="text-[#777A7C] overflow-hidden h-[180px] leading-[26px] text-[15px] font-normal font-inter"
             dangerouslySetInnerHTML={{ __html: text }}
-          ></p>
+          ></div>
           {data.button != null && (
             <button className=" mt-[10px]">
               <Link
                 href={data.url != null ? data.url : '/'}
-                className="border hover:bg-[#CCC] tracking-tight bg-white  hover:text-[#FFF] uppercase font-roboto  text-[16px] float-right right-[0px] absolute bottom-4 font-mediuum text-[#000] duration-400 px-2 py-[2px] rounded"
+                className="border hover:bg-[#CCC] tracking-tight bg-white  hover:text-[#FFF] uppercase font-sancoale text-[16px] float-right right-[0px] absolute bottom-4 font-mediuum text-[#000] duration-400 px-2 py-[2px] rounded"
               >
                 {data.button}
               </Link>

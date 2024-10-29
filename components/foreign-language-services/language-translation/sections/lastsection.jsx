@@ -142,16 +142,16 @@ export default function Lastsection(props) {
         if (node.name === 'document') {
           return <Document apiData={data} />;
         }
-      },
+      }
     });
     return parsedContent;
   };
 
   return data?.Case_Study != null ? (
     <div className="w-[100%] max-w-[1210px] mx-auto bg-white z-[10] relative mt-[40px] flex flex-col justify-center items-center">
-      <p className="text-[24px] w-full font-normal font-acme text-[#30B1C0] mt-[30px] uppercase leading-3 ">
+      <div className="text-[24px] w-full font-normal font-acme text-[#30B1C0] mt-[30px] uppercase leading-3 ">
         {data.Case_Study.heading}
-      </p>
+      </div>
       <div className="flex flex-col lg:flex-row w-full gap-[30px]  justify-center">
         {data.Case_Study.cards.map((e, i) => {
           return <Casestudycards data={e} key={i}></Casestudycards>;

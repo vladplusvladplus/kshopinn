@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Casestudycards(props) {
   return props.data != null && props.data != undefined ? (
@@ -29,12 +29,12 @@ export default function Casestudycards(props) {
         )}
       </div>
       <div className=" flex  flex-col  sm:w-[400px] w-full  justify-between items-end ">
-        <p className="text-[20px]  tracking-[-0.5px] left-[17px] relative sm:w-[400px] w-full mt-[-10px] uppercase text-[#F60]  font-medium font-fira-sans text-[]">
+        <div className="text-[20px]  tracking-[-0.5px] left-[17px] relative sm:w-[400px] w-full mt-[-10px] uppercase text-[#F60]  font-medium font-fira-sans text-[]">
           {props.data.heading}
-        </p>
-        <p className=" text-ellipsis w-[380px] overflow-hidden text-[15px] leading-6 flex justify-center  ">
+        </div>
+        <div className=" text-ellipsis w-[380px] overflow-hidden text-[15px] leading-6 flex justify-center  ">
           {props.data.text}
-        </p>
+        </div>
         <Link href={props.data.url} className="mt-3">
           <button
             name="cards"

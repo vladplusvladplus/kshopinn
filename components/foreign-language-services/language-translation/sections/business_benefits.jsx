@@ -95,7 +95,7 @@ export default function Business_benefits({ apiData }) {
       style={{ backgroundImage: 'url(/imgs/X-pattern-2.png)' }}
     >
       <div className="w-full px-2 max-w-[1210px] mx-auto relative z-10 mt-[10px] mb-[20px]">
-        <p dangerouslySetInnerHTML={{ __html: headings }}></p>
+        <div dangerouslySetInnerHTML={{ __html: headings }}></div>
         <div className="flex mt-[15px] justify-between gap-[20px]">
           <div className="w-[450px] md:flex hidden">
             <div className="w-[450px] h-full">
@@ -124,9 +124,9 @@ export default function Business_benefits({ apiData }) {
                     className="absolute top-0 left-0 w-full h-full"
                     style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
                   ></div>
-                  <p className="text-white my-auto text-[32px] font-normal font-fira-sans overflow-hidden leading-[48px] z-10">
+                  <div className="text-white my-auto text-[32px] font-normal font-fira-sans overflow-hidden leading-[48px] z-10">
                     {data.Benefits.boxtext}
-                  </p>
+                  </div>
                   <div className="w-full flex items-center z-10 mt-auto">
                     <Link href={`/${data.Benefits.url}`} className="ml-auto">
                       {' '}
@@ -144,10 +144,10 @@ export default function Business_benefits({ apiData }) {
           </div>
 
           <div className=" flex-grow flex flex-col justify-between">
-            <p
+            <div
               dangerouslySetInnerHTML={{ __html: text }}
               className="pb-4 mt-[-25px] font-roboto font-normal text-[#333]"
-            ></p>
+            ></div>
             <div className=" h-[inherit] flex justify-between">
               <Cards data={data.Benefits.cards}></Cards>
             </div>
