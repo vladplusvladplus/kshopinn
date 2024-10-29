@@ -1,7 +1,7 @@
-import { useState } from "react";
-import parse from "html-react-parser";
-import CallCenterSoftware from "./CallCenterSoftware";
-import Image from "next/image";
+import { useState } from 'react';
+import parse from 'html-react-parser';
+import CallCenterSoftware from './CallCenterSoftware';
+import Image from 'next/image';
 
 export default function WhyChooseUsTwo(props) {
   const [tab, setTab] = useState(0);
@@ -22,8 +22,8 @@ export default function WhyChooseUsTwo(props) {
       /\*\*(.*?)\*\*/g,
       '<strong className="text-[#F60]">$1</strong>'
     );
-    textt = textt.replace(/\*(.*?)\*/g, "<em>$1</em>");
-    textt = textt.replace(/_(.*?)_/g, "<em>$1</em>");
+    textt = textt.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    textt = textt.replace(/_(.*?)_/g, '<em>$1</em>');
     textt = textt.replace(
       /!\[([^\]]+)\]\(([^)]+)\)/g,
       '<img src="$2" class="w-[100px] h-[200px]">'
@@ -35,32 +35,32 @@ export default function WhyChooseUsTwo(props) {
     textt = textt.replace(/^- (.+)(\n- .+)*/gm, function (match, p1) {
       const listItems = match
         .trim()
-        .split("\n")
+        .split('\n')
         .map((item) => `<li class="leading-[22px]">${item.slice(2)}</li>`)
-        .join("\n");
+        .join('\n');
       return `<ul class='chooseus'>\n${listItems}\n</ul>`;
     });
     textt = textt.replace(/\n/gi, "<span class='mb-[8px]  block'></span> \n");
     textt = textt.replace(/^-- (.+)(\n-- .+)*/gm, function (match, p1) {
       const listItems = match
         .trim()
-        .split("\n")
+        .split('\n')
         .map((item) => `<li class="leading-[22px]">${item.slice(2)}</li>`)
-        .join("\n");
+        .join('\n');
       return `<ul class='pointerlist'>\n${listItems}\n</ul>`;
     });
     textt = textt.replace(
       /\{callcenter_logos\}/g,
-      () => "<CallCenterSoftware></CallCenterSoftware>"
+      () => '<CallCenterSoftware></CallCenterSoftware>'
     );
     const parsedContent = parse(textt, {
       decodeEntities: true,
       replace: (node) => {
-        if (node.name === "callcentersoftware") {
+        if (node.name === 'callcentersoftware') {
           return <CallCenterSoftware />;
         }
         return undefined;
-      },
+      }
     });
     return (
       <p className="text-[15px] leading-[25px] text-black font-normal font-roboto">
@@ -70,7 +70,7 @@ export default function WhyChooseUsTwo(props) {
   };
 
   if (!props || !props.data) {
-    return <>No data found!</>
+    return <>No data found!</>;
   }
   return (
     <div className="w-full mt-[20px] max-w-[1210px] mx-auto">
@@ -129,7 +129,7 @@ export default function WhyChooseUsTwo(props) {
                       <div
                         key={i}
                         className={`text-[14px] text-center cursor-pointer font-semibold p-1 rounded-md border-2 border-[#f60] ${
-                          tab === i ? "text-[#f60]" : "bg-[#f60] text-white"
+                          tab === i ? 'text-[#f60]' : 'bg-[#f60] text-white'
                         } transition`}
                         onClick={() => {
                           setTab(i);
@@ -139,7 +139,7 @@ export default function WhyChooseUsTwo(props) {
                       </div>
                     );
                   })
-                : ""}
+                : ''}
             </div>
             <div className="w-full h-[88%]">
               {props.data.cards != null
@@ -148,14 +148,14 @@ export default function WhyChooseUsTwo(props) {
                       <div
                         key={i}
                         className={` w-full h-full bg-[#f4f4f4] p-2 flex pt-6 flex-col ${
-                          tab === i ? "" : "hidden"
+                          tab === i ? '' : 'hidden'
                         }`}
                       >
                         <SetContent textt={e.content} />
                       </div>
                     );
                   })
-                : ""}
+                : ''}
             </div>
           </div>
         </div>

@@ -31,10 +31,10 @@ export function ApiProvider({ children }) {
         $or: [
           {
             page_url: {
-              $eq: searchurl,
-            },
-          },
-        ],
+              $eq: searchurl
+            }
+          }
+        ]
       },
       populate: [
         'videosection',
@@ -63,11 +63,11 @@ export function ApiProvider({ children }) {
         'Staffing_calculator.Non_voice_support_options',
         'Why_choose_three',
         'Why_choose_three.content',
-        'Why_choose_three.Why_us_three_cards',
-      ],
+        'Why_choose_three.Why_us_three_cards'
+      ]
     },
     {
-      encodeValuesOnly: true,
+      encodeValuesOnly: true
     }
   );
   const querytwo = qs.stringify(
@@ -76,15 +76,15 @@ export function ApiProvider({ children }) {
         $or: [
           {
             page_url: {
-              $eq: searchurl,
-            },
+              $eq: searchurl
+            }
           },
           {
             page_url: {
-              $eq: searchurltwo,
-            },
-          },
-        ],
+              $eq: searchurltwo
+            }
+          }
+        ]
       },
       populate: [
         'navbar',
@@ -93,6 +93,7 @@ export function ApiProvider({ children }) {
         'Banner.image',
         'Benefits',
         'Benefits.cards',
+        'Benefits.image',
         'Development',
         'Development.cards',
         'Case_Study',
@@ -125,18 +126,19 @@ export function ApiProvider({ children }) {
         'Keywords',
         'Above_Footer',
         'Above_Footer.last',
+        'Above_Footer.background',
         'FAQCards',
         'Hire_green_box',
         'Hire_green_box.cards',
         'HireForm',
         'LanguageIconBox',
         'Steps',
-        'Pricing_cards',
+        'Pricing_cards'
         // 'AboutUs.logo.logo'
-      ],
+      ]
     },
     {
-      encodeValuesOnly: true,
+      encodeValuesOnly: true
     }
   );
   const urltop = process.env.NEXT_PUBLIC_url + query;
@@ -146,9 +148,9 @@ export function ApiProvider({ children }) {
       await axios
         .get(urltop2, {
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
-          data: {},
+          data: {}
         })
         .then((response) => {
           if (
@@ -161,11 +163,11 @@ export function ApiProvider({ children }) {
             ) {
               const myCustomAttributes = {
                 id: response.data.data[0].id,
-                api: 'inner3',
+                api: 'inner3'
               };
               const updateddata = {
                 ...response.data.data[0].attributes,
-                ...myCustomAttributes,
+                ...myCustomAttributes
               };
               setApiData2(updateddata);
               setApiData(null);
@@ -184,9 +186,9 @@ export function ApiProvider({ children }) {
       await axios
         .get(urltop, {
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
-          data: {},
+          data: {}
         })
         .then((response) => {
           if (
@@ -196,11 +198,11 @@ export function ApiProvider({ children }) {
             if (response.data.data[0].attributes.page_url === searchurl) {
               const myCustomAttributes = {
                 id: response.data.data[0].id,
-                api: 'website',
+                api: 'website'
               };
               const updateddata = {
                 ...response.data.data[0].attributes,
-                ...myCustomAttributes,
+                ...myCustomAttributes
               };
               setApiData(updateddata);
               setApiData2(null);

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function HappyClient() {
   return (
@@ -11,7 +11,7 @@ export default function HappyClient() {
           <i className="flaticon-support text-[20px] rotateicon text-[#30B1C0]"></i>
         </div>
         <p className="text-[#12103E] mb-[40px] sm:w-[370px] font-lexend-deca text-[48px] font-semibold">
-          I work with over 150+{" "}
+          I work with over 150+{' '}
           <span className="text-[#f60]"> happy clients </span>
         </p>
         <p className=" font-jost text-[18px] sm:w-[350px] font-normal text-[#9E9EAC]">
@@ -26,7 +26,7 @@ export default function HappyClient() {
               <div className="max-w-xs cursor-pointer  rounded-lg bg-white  shadow duration-150  hover:shadow-md ">
                 <Image
                   className="w-full rounded-t-lg object-cover object-center h-[130px]"
-                  src={"/imgs/client-placeholder.avif"}
+                  src={'/imgs/client-placeholder.avif'}
                   height={130}
                   width={200}
                   alt="product"
@@ -44,7 +44,7 @@ export default function HappyClient() {
               <div className="max-w-xs cursor-pointer  rounded-lg bg-white  shadow duration-150  hover:shadow-md">
                 <Image
                   className="w-full rounded-t-lg object-cover object-center h-[130px]"
-                  src={"/imgs/client-placeholder.avif"}
+                  src={'/imgs/client-placeholder.avif'}
                   height={130}
                   width={200}
                   alt="product"
@@ -62,7 +62,7 @@ export default function HappyClient() {
               <div className="max-w-xs cursor-pointer  rounded-lg bg-white  shadow duration-150   hover:shadow-md">
                 <Image
                   className="w-full rounded-t-lg object-cover object-center h-[130px]"
-                  src={"/imgs/client-placeholder.avif"}
+                  src={'/imgs/client-placeholder.avif'}
                   height={130}
                   width={200}
                   alt="product"
@@ -82,7 +82,7 @@ export default function HappyClient() {
               <div className="max-w-xs cursor-pointer  rounded-lg bg-white  shadow duration-150  hover:shadow-md">
                 <Image
                   className="w-full rounded-t-lg object-cover object-center h-[130px]"
-                  src={"/imgs/client-placeholder.avif"}
+                  src={'/imgs/client-placeholder.avif'}
                   height={130}
                   width={200}
                   alt="product"
@@ -100,7 +100,7 @@ export default function HappyClient() {
               <div className="max-w-xs cursor-pointer  rounded-lg bg-white  shadow duration-150  hover:shadow-md">
                 <Image
                   className="w-full rounded-t-lg object-cover object-center h-[130px]"
-                  src={"/imgs/client-placeholder.avif"}
+                  src={'/imgs/client-placeholder.avif'}
                   height={130}
                   width={200}
                   alt="product"
@@ -118,7 +118,7 @@ export default function HappyClient() {
               <div className="max-w-xs cursor-pointer  rounded-lg bg-white  shadow duration-150   hover:shadow-md">
                 <Image
                   className="w-full rounded-t-lg object-cover object-center h-[130px]"
-                  src={"/imgs/client-placeholder.avif"}
+                  src={'/imgs/client-placeholder.avif'}
                   height={130}
                   width={200}
                   alt="product"

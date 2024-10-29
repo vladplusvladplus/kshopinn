@@ -12,16 +12,16 @@ import { fetchHomeData } from '@/Redux/actions/homeActions';
 import HowWeWork from '@/components/homepage/HowWeWork';
 
 const Footer = dynamic(() => import('@/components/Footer/page'), {
-  loading: () => () => <div className="w-full min-h-screen">Loading</div>,
+  loading: () => () => <div className="w-full min-h-screen">Loading</div>
 });
 const ClientLogos = dynamic(() => import('@/components/homepage/ClientLogos'), {
-  loading: () => () => <div className="w-full min-h-screen">Loading</div>,
+  loading: () => () => <div className="w-full min-h-screen">Loading</div>
 });
 const Services = dynamic(() => import('@/components/homepage/Services'), {
-  loading: () => () => <div className="w-full min-h-screen">Loading</div>,
+  loading: () => () => <div className="w-full min-h-screen">Loading</div>
 });
 const Advantage = dynamic(() => import('@/components/parts/advantage'), {
-  loading: () => () => <div className="w-full min-h-screen">Loading</div>,
+  loading: () => () => <div className="w-full min-h-screen">Loading</div>
 });
 
 const Home = ({ homeData, footerData }) => {
@@ -65,8 +65,8 @@ export const getServerSideProps = wrapper.getServerSideProps(
     return {
       props: {
         homeData: homeState.homeData || null,
-        footerData: footerState.footerData || null,
-      },
+        footerData: footerState.footerData || null
+      }
     };
   }
 );

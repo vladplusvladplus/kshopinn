@@ -1,8 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import Image from 'next/image';
 
 const TrustBox = ({ reviews }) => {
   return (
@@ -11,11 +11,11 @@ const TrustBox = ({ reviews }) => {
         spaceBetween={50}
         slidesPerView={3}
         pagination={{
-          clickable: true,
+          clickable: true
         }}
         autoPlay={{
           delay: 1000,
-          disableOnInteraction: false,
+          disableOnInteraction: false
         }}
         modules={[Pagination]}
       >
@@ -47,7 +47,7 @@ const TrustBox = ({ reviews }) => {
                 <div>
                   <p>
                     <span className="font-acme text-[18px]">{review.name}</span>
-                    ,{" "}
+                    ,{' '}
                     <span className="text-[#F60] font-acme">
                       {review.location}
                     </span>
@@ -75,10 +75,10 @@ const TrustBox = ({ reviews }) => {
                 <span
                   className="text-[15px]"
                   style={{
-                    backgroundImage: "url(/icons/doubleQuaote.svg)",
-                    backgroundSize: "30px 30px",
-                    paddingLeft: "40px",
-                    backgroundRepeat: "no-repeat",
+                    backgroundImage: 'url(/icons/doubleQuaote.svg)',
+                    backgroundSize: '30px 30px',
+                    paddingLeft: '40px',
+                    backgroundRepeat: 'no-repeat'
                   }}
                 >
                   {review.review}
