@@ -4,94 +4,93 @@ import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 
 import FaqSide from '@/components/parts/FaqSide';
-import { useSelector } from 'react-redux';
 
 const Footer = dynamic(() => import('@/components/Footer/page'), {
-  loading: () => <div className="w-full min-h-screen">Loading</div>,
+  loading: () => <div className="w-full min-h-screen">Loading</div>
 });
 const Aboutus = dynamic(() => import('@/components/case_study/Aboutus'), {
-  loading: () => <div className="w-full min-h-[500px]">loading</div>,
+  loading: () => <div className="w-full min-h-[500px]">loading</div>
 });
 const IndustriesChoose = dynamic(
   () => import('@/components/parts/industries_choose'),
   {
-    loading: () => <div className="w-full min-h-screen">loading</div>,
+    loading: () => <div className="w-full min-h-screen">loading</div>
   }
 );
 const Block = dynamic(() => import('../careers/block'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Results = dynamic(() => import('@/components/parts/results.jsx'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const LangCards = dynamic(() => import('@/components/language/card'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const IndustriesCards = dynamic(() => import('@/components/industries/card'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Careerform = dynamic(() => import('../careers/form'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const AboutusCard = dynamic(() => import('@/components/parts/aboutus'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const PPT = dynamic(() => import('@/components/parts/ppt'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const FAQscard = dynamic(() => import('@/components/FAQs/FAQcard'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Hire = dynamic(() => import('@/components/parts/hire'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const HireForm = dynamic(() => import('@/components/parts/hire_form'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const IconCards = dynamic(() => import('@/components/parts/IconCards'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Countries = dynamic(
   () => import('@/components/home/countries/Countries'),
   {
-    loading: () => <div className="w-full min-h-screen">loading</div>,
+    loading: () => <div className="w-full min-h-screen">loading</div>
   }
 );
 const Industries = dynamic(
   () => import('@/components/home/industries/Industries'),
   {
-    loading: () => <div className="w-full min-h-screen">loading</div>,
+    loading: () => <div className="w-full min-h-screen">loading</div>
   }
 );
 const Steps = dynamic(() => import('@/components/parts/step'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Last = dynamic(() => import('./last'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Tiltcard = dynamic(() => import('./titlcard.jsx'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const BusinessBenefits = dynamic(() => import('./business_benefits'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Lastsection = dynamic(() => import('./lastsection'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const RightSection = dynamic(() => import('../content/RightSection'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Document = dynamic(() => import('./document.jsx'), {
-  loading: () => <div className="w-full min-h-[150px]">loading</div>,
+  loading: () => <div className="w-full min-h-[150px]">loading</div>
 });
 const AdvantageCards = dynamic(
   () => import('@/components/parts/advantagecards'),
   {
-    loading: () => <div className="w-full min-h-screen">loading</div>,
+    loading: () => <div className="w-full min-h-screen">loading</div>
   }
 );
 const Testimonials = dynamic(() => import('@/components/parts/testimonial'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Allservicecards = dynamic(
   () =>
@@ -99,20 +98,20 @@ const Allservicecards = dynamic(
       '@/components/foreign-language-services/language-translation/Allservice/page.jsx'
     ),
   {
-    loading: () => <div className="w-full min-h-screen">loading</div>,
+    loading: () => <div className="w-full min-h-screen">loading</div>
   }
 );
 const DataClients = dynamic(() => import('@/components/parts/DataClients'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const PricingCards = dynamic(() => import('@/components/parts/PricingCards'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const Clients2 = dynamic(() => import('./clients2'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 const HiringModels = dynamic(() => import('@/components/parts/HiringModels'), {
-  loading: () => <div className="w-full min-h-screen">loading</div>,
+  loading: () => <div className="w-full min-h-screen">loading</div>
 });
 
 export default function Section(props) {
@@ -288,7 +287,7 @@ export default function Section(props) {
           return <IndustriesChoose />;
         }
         return undefined;
-      },
+      }
     });
     return <div className="text-[15px]">{parsedContent}</div>;
   };

@@ -68,15 +68,20 @@ export default function Last(props) {
           className="z-[10] overflow-hidden relative w-full bg-gray-300 bg-contain filter flex justify-between items-center"
           style={{
             height: data?.last[0] != null ? '414px' : '350px',
-            backgroundImage: `url('/imgs/assets/Orange Bokeh Fusion.jpg')`,
+            backgroundImage: data?.background?.data?.attributes?.url
+              ? `url(${
+                  process.env.NEXT_PUBLIC_mainurl +
+                  data.background.data.attributes.url
+                })`
+              : `url('')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center'
           }}
         >
           <div
             className=" flex "
             style={{
-              height: data?.last[0] != null ? '414px' : '300px',
+              height: data?.last[0] != null ? '414px' : '300px'
             }}
           ></div>
           <div className="w-[100%] h-full flex flex-col gap-[20px] justify-center items-start ml-40">
@@ -84,7 +89,7 @@ export default function Last(props) {
               className="font-fira-sans font-normal text-[#FFF] text-start"
               style={{
                 fontSize: data?.last[0] != null ? '40px' : '35px',
-                width: data?.last[0] != null ? '881px' : '',
+                width: data?.last[0] != null ? '881px' : ''
               }}
               dangerouslySetInnerHTML={{ __html: text }}
             ></p>

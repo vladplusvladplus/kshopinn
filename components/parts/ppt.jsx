@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from 'next/image';
 export default function PPT(props) {
   const handleClick = (event) => {
     event.preventDefault();
-    window.open(process.env.NEXT_PUBLIC_mainurl + props.url, "_blank");
+    window.open(process.env.NEXT_PUBLIC_mainurl + props.url, '_blank');
   };
   return (
     <div className="w-full h-[270px] relative bg-white bg-opacity-0 rounded-t-[13px] mb-[px]  mt-[30px] rounded-b-[13px] shadow border border-stone-300 border-opacity-80">

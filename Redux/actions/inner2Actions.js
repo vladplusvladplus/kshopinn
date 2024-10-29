@@ -14,14 +14,15 @@ export const fetchInner2Data = createAsyncThunk(
         filters: {
           $or: [
             { page_url: { $eq: searchurl } },
-            { page_url: { $eq: searchurlWithSlash } },
-          ],
+            { page_url: { $eq: searchurlWithSlash } }
+          ]
         },
         populate: [
           'Banner',
           'Banner.image',
           'Benefits',
           'Benefits.cards',
+          'Benefits.image',
           'Development',
           'Development.cards',
           'Case_Study',
@@ -34,6 +35,7 @@ export const fetchInner2Data = createAsyncThunk(
           'Advantage_Box.cards.image',
           'Above_Footer',
           'Above_Footer.last',
+          'Above_Footer.background',
           'language_card',
           'language_card.image',
           'Industries_We_Serve',
@@ -53,8 +55,8 @@ export const fetchInner2Data = createAsyncThunk(
           'LanguageIconBox',
           'Steps',
           'Career',
-          'Pricing_cards',
-        ],
+          'Pricing_cards'
+        ]
       },
       { encodeValuesOnly: true }
     );
@@ -63,7 +65,7 @@ export const fetchInner2Data = createAsyncThunk(
 
     try {
       const response = await axios.get(url, {
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' }
       });
       const data = response.data.data[0];
       if (
@@ -74,7 +76,7 @@ export const fetchInner2Data = createAsyncThunk(
         return {
           id: data.id,
           ...data.attributes,
-          api: 'inner2',
+          api: 'inner2'
         };
       }
       return rejectWithValue('No data found');

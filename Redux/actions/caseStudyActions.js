@@ -8,7 +8,7 @@ export const fetchCaseStudyData = createAsyncThunk(
     const query = qs.stringify(
       {
         filters: {
-          $or: [{ page_url: { $eq: searchurl } }],
+          $or: [{ page_url: { $eq: searchurl } }]
         },
         populate: [
           'Banner',
@@ -20,7 +20,8 @@ export const fetchCaseStudyData = createAsyncThunk(
           'Testimonial.use',
           'Above_Footer',
           'Above_Footer.last',
-        ],
+          'Above_Footer.background'
+        ]
       },
       { encodeValuesOnly: true }
     );
@@ -29,7 +30,7 @@ export const fetchCaseStudyData = createAsyncThunk(
 
     try {
       const response = await axios.get(urltop, {
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' }
       });
 
       const data = response.data.data[0];
@@ -37,7 +38,7 @@ export const fetchCaseStudyData = createAsyncThunk(
         return {
           id: data.id,
           ...data.attributes,
-          api: 'case-study',
+          api: 'case-study'
         };
       }
       return null;

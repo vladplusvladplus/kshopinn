@@ -1,27 +1,28 @@
-import axios from "axios";
-import qs from "qs";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from 'axios';
+import qs from 'qs';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // Create the async thunk for fetching hire data
 export const fetchHireData = createAsyncThunk(
-  "hire/fetchHireData",
+  'hire/fetchHireData',
   async (searchurltwo, { rejectWithValue }) => {
     const query = qs.stringify(
       {
         filters: {
-          $or: [{ page_url: { $eq: searchurltwo } }],
+          $or: [{ page_url: { $eq: searchurltwo } }]
         },
         populate: [
-          "Banner",
-          "Banner.image",
-          "Benefits",
-          "Benefits.cards",
-          "Advantage_Box",
-          "Advantage_Box.cards",
-          "Advantage_Box.cards.image",
-          "Hire_green_box",
-          "Hire_green_box.cards",
-        ],
+          'Banner',
+          'Banner.image',
+          'Benefits',
+          'Benefits.cards',
+          'Benefits.image',
+          'Advantage_Box',
+          'Advantage_Box.cards',
+          'Advantage_Box.cards.image',
+          'Hire_green_box',
+          'Hire_green_box.cards'
+        ]
       },
       { encodeValuesOnly: true }
     );
@@ -30,14 +31,14 @@ export const fetchHireData = createAsyncThunk(
 
     try {
       const response = await axios.get(url, {
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' }
       });
 
       if (response.data.data.length > 0) {
         const hireData = response.data.data[0].attributes;
         return hireData;
       } else {
-        return rejectWithValue("No data found!");
+        return rejectWithValue('No data found!');
       }
     } catch (error) {
       return rejectWithValue(error.response.data);

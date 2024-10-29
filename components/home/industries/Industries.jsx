@@ -8,101 +8,101 @@ export const industriesData = {
   idustries: [
     {
       icon: '/imgs/industries/plane.svg',
-      title: 'Aerospace',
+      title: 'Aerospace'
     },
     {
       icon: '/imgs/industries/agriculture.svg',
-      title: 'Agriculture',
+      title: 'Agriculture'
     },
     {
       icon: '/imgs/industries/car.svg',
-      title: 'Automotive',
+      title: 'Automotive'
     },
     {
       icon: '/imgs/industries/chemical.svg',
-      title: 'Chemical',
+      title: 'Chemical'
     },
     {
       icon: '/imgs/industries/brokerage.svg',
-      title: 'Custom Brokerage',
+      title: 'Custom Brokerage'
     },
     {
       icon: '/imgs/industries/defense.svg',
-      title: 'Defense/Arm',
+      title: 'Defense/Arm'
     },
     {
       icon: '/imgs/industries/energy.svg',
-      title: 'Energy',
+      title: 'Energy'
     },
     {
       icon: '/imgs/industries/education.svg',
-      title: 'Education',
+      title: 'Education'
     },
     {
       icon: '/imgs/industries/entertainment.svg',
-      title: 'Entertainment',
+      title: 'Entertainment'
     },
     {
       icon: '/imgs/industries/finance.svg',
-      title: 'Finance',
+      title: 'Finance'
     },
     {
       icon: '/imgs/industries/forestry.svg',
-      title: 'Forestry',
+      title: 'Forestry'
     },
     {
       icon: '/imgs/industries/food.svg',
-      title: 'Food',
+      title: 'Food'
     },
     {
       icon: '/imgs/industries/health.svg',
-      title: 'Healthcare',
+      title: 'Healthcare'
     },
     {
       icon: '/imgs/industries/hospital.svg',
-      title: 'Hospitality',
+      title: 'Hospitality'
     },
     {
       icon: '/imgs/industries/it.svg',
-      title: 'Information Technology',
+      title: 'Information Technology'
     },
     {
       icon: '/imgs/industries/Logistics.svg',
-      title: 'Logistics',
+      title: 'Logistics'
     },
     {
       icon: '/imgs/industries/Manufacturing.svg',
-      title: 'Manufacturing',
+      title: 'Manufacturing'
     },
     {
       icon: '/imgs/industries/Mass.svg',
-      title: 'Mass',
+      title: 'Mass'
     },
     {
       icon: '/imgs/industries/Multimedia.svg',
-      title: 'Multimedia',
+      title: 'Multimedia'
     },
     {
       icon: '/imgs/industries/PublicSector.svg',
-      title: 'Public Sector/Government',
+      title: 'Public Sector/Government'
     },
     {
       icon: '/imgs/industries/Pharmaceutical.svg',
-      title: 'Pharmaceutical',
+      title: 'Pharmaceutical'
     },
     {
       icon: '/imgs/industries/Retail.svg',
-      title: 'Retail & e-Commerce',
+      title: 'Retail & e-Commerce'
     },
     {
       icon: '/imgs/industries/Telecommunications.svg',
-      title: 'Telecommunications',
+      title: 'Telecommunications'
     },
     {
       icon: '/imgs/industries/Transport.svg',
-      title: 'Transport',
-    },
-  ],
+      title: 'Transport'
+    }
+  ]
 };
 
 const Industries = (props) => {
@@ -112,7 +112,7 @@ const Industries = (props) => {
       style={{
         paddingTop: '42px',
         backgroundColor: '#e8f3fe',
-        position: 'relative',
+        position: 'relative'
       }}
     >
       <Image
@@ -120,22 +120,26 @@ const Industries = (props) => {
         alt=""
         width={300}
         height={400}
-        className="absolute -left-0 bottom-0 h-[350px]"
+        className="absolute -left-0 bottom-0"
+        style={{ width: 'auto', height: '350px' }}
       />
+
       <Image
         src="/imgs/industries_2-cropped.svg"
         alt=""
         width={300}
         height={400}
-        className="absolute -right-0 top-0 h-[375px]"
+        className="absolute -right-0 top-0"
+        style={{ width: 'auto', height: '375px' }}
       />
+
       <div
         className={styles.content}
         style={{
           marginBottom: '25px',
           maxWidth: '1210px',
           marginLeft: 'auto',
-          marginRight: 'auto',
+          marginRight: 'auto'
         }}
       >
         <div

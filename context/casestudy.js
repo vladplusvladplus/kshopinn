@@ -1,12 +1,12 @@
 // apiContext.js
-"use client";
+'use client';
 
-import { useRouter } from "next/router";
-import qs from "qs";
-import axios from "axios";
-import { createContext, useContext, useEffect, useState } from "react";
+import { useRouter } from 'next/router';
+import qs from 'qs';
+import axios from 'axios';
+import { createContext, useContext, useEffect, useState } from 'react';
 const ApiContext = createContext();
-import { useError } from "./error";
+import { useError } from './error';
 
 export function CaseStudyData({ children }) {
   const [apiCaseData, setApiData] = useState(null);
@@ -23,25 +23,26 @@ export function CaseStudyData({ children }) {
         $or: [
           {
             page_url: {
-              $eq: searchurl,
-            },
-          },
-        ],
+              $eq: searchurl
+            }
+          }
+        ]
       },
       populate: [
-        "Banner",
-        "Banner.image",
-        "Case_Study",
-        "Case_Study.image",
-        "page_url",
-        "Testimonial",
-        "Testimonial.use",
-        "Above_Footer",
-        "Above_Footer.last",
-      ],
+        'Banner',
+        'Banner.image',
+        'Case_Study',
+        'Case_Study.image',
+        'page_url',
+        'Testimonial',
+        'Testimonial.use',
+        'Above_Footer',
+        'Above_Footer.last',
+        'Above_Footer.background'
+      ]
     },
     {
-      encodeValuesOnly: true,
+      encodeValuesOnly: true
     }
   );
   const querydetails = qs.stringify(
@@ -50,43 +51,44 @@ export function CaseStudyData({ children }) {
         $or: [
           {
             page_url: {
-              $eq: searchurl,
-            },
-          },
-        ],
+              $eq: searchurl
+            }
+          }
+        ]
       },
       populate: [
         // 'navbar',
         // 'navbar.innerlink',
 
-        "Banner",
-        "Banner.image",
-        "content",
-        "Advantage_Box",
-        "Advantage_Box.cards",
+        'Banner',
+        'Banner.image',
+        'content',
+        'Advantage_Box',
+        'Advantage_Box.cards',
 
-        "Advantage_Box.cards.image",
+        'Advantage_Box.cards.image',
 
-        "results",
-        "results.box",
-      ],
+        'results',
+        'results.box'
+      ]
     },
     {
-      encodeValuesOnly: true,
+      encodeValuesOnly: true
     }
   );
 
-  const urltop = process.env.NEXT_PUBLIC_mainurl + "/api/case-studies?" + query;
-  const urldetails =process.env.NEXT_PUBLIC_mainurl + "/api/cases?" + querydetails;
+  const urltop = process.env.NEXT_PUBLIC_mainurl + '/api/case-studies?' + query;
+  const urldetails =
+    process.env.NEXT_PUBLIC_mainurl + '/api/cases?' + querydetails;
 
   useEffect(() => {
     const fetching = async () => {
       await axios
         .get(urltop, {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json'
           },
-          data: {},
+          data: {}
         })
         .then((response) => {
           if (
@@ -96,11 +98,11 @@ export function CaseStudyData({ children }) {
           ) {
             const myCustomAttributes = {
               id: response.data.data[0].id,
-              api: "case-study",
+              api: 'case-study'
             };
             const updateddata = {
               ...response.data.data[0].attributes,
-              ...myCustomAttributes,
+              ...myCustomAttributes
             };
             setApiData(updateddata);
           } else {
@@ -116,9 +118,9 @@ export function CaseStudyData({ children }) {
       await axios
         .get(urldetails, {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json'
           },
-          data: {},
+          data: {}
         })
         .then((response) => {
           if (
@@ -128,11 +130,11 @@ export function CaseStudyData({ children }) {
           ) {
             const myCustomAttributes = {
               id: response.data.data[0].id,
-              api: "case",
+              api: 'case'
             };
             const updateddata = {
               ...response.data.data[0].attributes,
-              ...myCustomAttributes,
+              ...myCustomAttributes
             };
             setApiCaseDetail(updateddata);
           } else if (response.data.data[0] === null) {
@@ -145,7 +147,7 @@ export function CaseStudyData({ children }) {
       setCaseLoading(false);
     };
     setCaseLoading(true);
-    if (searchurl !== "/[slugg]/[slug2" && searchurl !== "/[slugg") {
+    if (searchurl !== '/[slugg]/[slug2' && searchurl !== '/[slugg') {
       fetching();
     }
   }, [searchurl]);

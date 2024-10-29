@@ -28,15 +28,15 @@ export function Apiinner2({ children }) {
         $or: [
           {
             page_url: {
-              $eq: searchurl,
-            },
+              $eq: searchurl
+            }
           },
           {
             page_url: {
-              $eq: searchurltwo,
-            },
-          },
-        ],
+              $eq: searchurltwo
+            }
+          }
+        ]
       },
       populate: [
         // 'navbar',
@@ -45,6 +45,7 @@ export function Apiinner2({ children }) {
         'Banner.image',
         'Benefits',
         'Benefits.cards',
+        'Benefits.image',
         'Development',
         'Development.cards',
         'Case_Study',
@@ -57,6 +58,7 @@ export function Apiinner2({ children }) {
         'Advantage_Box.cards.image',
         'Above_Footer',
         'Above_Footer.last',
+        'Above_Footer.background',
         'language_card',
         'language_card.image',
         'Industries_We_Serve',
@@ -76,11 +78,11 @@ export function Apiinner2({ children }) {
         'LanguageIconBox',
         'Steps',
         'Career',
-        'Pricing_cards',
-      ],
+        'Pricing_cards'
+      ]
     },
     {
-      encodeValuesOnly: true,
+      encodeValuesOnly: true
     }
   );
 
@@ -90,10 +92,10 @@ export function Apiinner2({ children }) {
         $or: [
           {
             page_url: {
-              $eq: partssec[0],
-            },
-          },
-        ],
+              $eq: partssec[0]
+            }
+          }
+        ]
       },
       populate: [
         // 'navbar',
@@ -109,11 +111,11 @@ export function Apiinner2({ children }) {
         'Testimonial.cards',
         'Testimonial.cards.image',
         'metaDescription',
-        'Title',
-      ],
+        'Title'
+      ]
     },
     {
-      encodeValuesOnly: true,
+      encodeValuesOnly: true
     }
   );
 
@@ -132,9 +134,9 @@ export function Apiinner2({ children }) {
       await axios
         .get(url, {
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
-          data: {},
+          data: {}
         })
         .then((response) => {
           if (
@@ -152,11 +154,11 @@ export function Apiinner2({ children }) {
                     ? 'inner2'
                     : url === urltop3
                     ? 'inner3'
-                    : 'learning',
+                    : 'learning'
               };
               const updateddata = {
                 ...response.data.data[0].attributes,
-                ...myCustomAttributes,
+                ...myCustomAttributes
               };
 
               setApiData(updateddata);
@@ -179,9 +181,9 @@ export function Apiinner2({ children }) {
       await axios
         .get(url, {
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
-          data: {},
+          data: {}
         })
         .then((response) => {
           if (
@@ -195,11 +197,11 @@ export function Apiinner2({ children }) {
                   ? 'inner2'
                   : url === urltop3
                   ? 'inner3'
-                  : 'learning',
+                  : 'learning'
             };
             const updateddata = {
               ...response.data.data[0].attributes,
-              ...myCustomAttributes,
+              ...myCustomAttributes
             };
             setApiDatatwo(updateddata);
           } else {

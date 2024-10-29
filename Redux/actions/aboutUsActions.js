@@ -11,14 +11,15 @@ export const fetchAboutUsData = createAsyncThunk(
         filters: {
           $or: [
             { page_url: { $eq: searchurl } },
-            { page_url: { $eq: searchurlWithSlash } },
-          ],
+            { page_url: { $eq: searchurlWithSlash } }
+          ]
         },
         populate: [
           'Banner',
           'Banner.image',
           'Benefits',
           'Benefits.cards',
+          'Benefits.image',
           'Development',
           'Development.cards',
           'Case_Study',
@@ -31,6 +32,7 @@ export const fetchAboutUsData = createAsyncThunk(
           'Advantage_Box.cards.image',
           'Above_Footer',
           'Above_Footer.last',
+          'Above_Footer.background',
           'language_card',
           'language_card.image',
           'Industries_We_Serve',
@@ -59,8 +61,8 @@ export const fetchAboutUsData = createAsyncThunk(
           'cv_form',
           'about_us',
           'Career',
-          'Pricing_cards',
-        ],
+          'Pricing_cards'
+        ]
       },
       { encodeValuesOnly: true }
     );
@@ -68,7 +70,7 @@ export const fetchAboutUsData = createAsyncThunk(
 
     try {
       const response = await axios.get(url, {
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' }
       });
       const data = response.data.data[0];
 
@@ -80,7 +82,7 @@ export const fetchAboutUsData = createAsyncThunk(
         return {
           id: data.id,
           ...data.attributes,
-          api: 'about-uses',
+          api: 'about-uses'
         };
       }
 
