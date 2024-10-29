@@ -140,10 +140,10 @@ const Banner = (props) => {
                     style={{
                       backgroundImage: 'url(/imgs/peeled_circle.avif)',
                       backgroundPosition: 'center',
-                      backgroundSize: '160% 160%',
+                      backgroundSize: '160% 160%'
                     }}
                   >
-                    <p className="text-[14px] ml-[40px]">Starts from</p>
+                    <div className="text-[14px] ml-[40px]">Starts from</div>
                     <span className="font-bold text-[16px]">
                       {(dataa.Banner?.Price || dataa.Price).split(' ')[0]}
                     </span>

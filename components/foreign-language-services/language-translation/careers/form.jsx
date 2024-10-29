@@ -39,7 +39,7 @@ export default function Careerform() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
+    email: ''
   });
 
   const handleChange = (ee) => {
@@ -95,8 +95,8 @@ export default function Careerform() {
       });
       const response = await axios.post('/api/sendEmail', formdata, {
         headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+          'Content-Type': 'multipart/form-data'
+        }
       });
 
       if (response.data.success) {
@@ -105,7 +105,7 @@ export default function Careerform() {
         setFormData({
           name: '',
           phone: '',
-          email: '',
+          email: ''
         });
         fileInputRef.current.value = null;
         setSelectedFiles([]);
@@ -122,7 +122,7 @@ export default function Careerform() {
         country: ipData.country,
         IP: ipData.ip,
         url: `${window.location.origin}${asPath}`,
-        date: dateString,
+        date: dateString
       };
       const formdataa = new FormData();
       selectedFiles.forEach((file, index) => {
@@ -132,7 +132,7 @@ export default function Careerform() {
 
       await fetch(process.env.NEXT_PUBLIC_mainurl + '/api/forms', {
         method: 'POST',
-        body: formdataa,
+        body: formdataa
       })
         .then((res) => {
           console.log(res);
@@ -148,9 +148,9 @@ export default function Careerform() {
 
   return (
     <div className="w-[800px]">
-      <p className="font-acme px-[25px] text-[#30B1C0] text-[20px] uppercase font-normal">
+      <div className="font-acme px-[25px] text-[#30B1C0] text-[20px] uppercase font-normal">
         Submit your CV to us
-      </p>
+      </div>
       <div className="px-[25px]   w-[100%] justify-start  shadow-none flex flex-col gap-y-[8px] ">
         <label htmlFor="name" className="hidden">
           Name
@@ -165,9 +165,9 @@ export default function Careerform() {
           placeholder="Name"
         />
         {namewarn ? (
-          <p className="text-[9px] text-start mt-[-10px] w-full text-[red]">
+          <div className="text-[9px] text-start mt-[-10px] w-full text-[red]">
             no number or special characters are allowed
-          </p>
+          </div>
         ) : (
           ''
         )}
@@ -209,9 +209,9 @@ export default function Careerform() {
               />
             </div>
             {phonewarn ? (
-              <p className="text-[9px] text-start mt-[-px] wfull text-[red]">
+              <div className="text-[9px] text-start mt-[-px] wfull text-[red]">
                 no alphabets or special characters are allowed
-              </p>
+              </div>
             ) : (
               ''
             )}

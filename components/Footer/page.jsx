@@ -10,7 +10,7 @@ export default function Footer(props) {
   const { rh } = navigate.query;
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    email: ''
   });
 
   const handleChange = (ee) => {
@@ -40,8 +40,8 @@ export default function Footer(props) {
       formdata.append('date', dateString);
       const response = await axios.post('/api/sendEmail', formdata, {
         headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+          'Content-Type': 'multipart/form-data'
+        }
       });
       if (response.data.success) {
         alert('Submitted!');
@@ -49,7 +49,7 @@ export default function Footer(props) {
           name: '',
           phone: '',
           email: '',
-          message: '',
+          message: ''
         });
       } else {
         console.error('Error submitting form:', response.data.message);
@@ -61,13 +61,13 @@ export default function Footer(props) {
         country: ipData.country,
         IP: ipData.ip,
         url: `Footer`,
-        date: dateString,
+        date: dateString
       };
       const formdataa = new FormData();
       formdataa.append('data', JSON.stringify(data));
       await fetch(process.env.NEXT_PUBLIC_mainurl + '/api/forms', {
         method: 'POST',
-        body: formdataa,
+        body: formdataa
       })
         .then((res) => {
           console.log(res);
@@ -84,48 +84,48 @@ export default function Footer(props) {
   const bottomLinks = [
     {
       icon: 'flaticon-house',
-      url: '/',
+      url: '/'
     },
     {
       text: 'FOREIGN LANGUAGE SUPPORT',
-      url: '/foreign-language-services',
+      url: '/foreign-language-services'
     },
     {
       text: 'MARKET RESEARCH & ANALYSIS',
-      url: '/outsource-market-research-services',
+      url: '/outsource-market-research-services'
     },
     {
       text: 'TRANSCRIPTION SERVICES',
-      url: '/transcription-services',
+      url: '/transcription-services'
     },
     {
       text: 'MULTILINGUAL CALL CENTER',
-      url: '/multilingual-call-center-outsourcing',
+      url: '/multilingual-call-center-outsourcing'
     },
     {
       text: 'DATA ENTRY SERVICES',
-      url: '/data-entry',
+      url: '/data-entry'
     },
     {
       text: 'CREATIVE SERVICES',
-      url: '/outsource-creative-services',
+      url: '/outsource-creative-services'
     },
     {
       text: 'PHOTO EDITING SERVICES',
-      url: '/outsource-photo-editing-services',
+      url: '/outsource-photo-editing-services'
     },
     {
       text: 'VIRTUAL ASSISTANT SERVICES',
-      url: '/virtual-assistant-services',
+      url: '/virtual-assistant-services'
     },
     {
       text: 'FINANCE & ACCOUNTING',
-      url: '/',
+      url: '/'
     },
     {
       text: 'WEB DESIGN & DEVELOPMENT',
-      url: '/',
-    },
+      url: '/'
+    }
   ];
 
   const data = props.data != null ? props.data.footer : '';
@@ -149,19 +149,19 @@ export default function Footer(props) {
         <div className="flex flex-col sm:flex-row justify-between w-full sm:px-10 px-1 pt-10">
           <div className=" flex flex-col w-[28%] ">
             <div className="boxarrow h-[45px]  ">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 About us
-              </p>
+              </div>
             </div>
-            <p className=" text-[15px] mt-[30px] sm:w-[85%] w-[250px] text-[#FFF] font-roboto">
+            <div className=" text-[15px] mt-[30px] sm:w-[85%] w-[250px] text-[#FFF] font-roboto">
               {data.about_us_content}
-            </p>
+            </div>
           </div>
           <div className="flex flex-col h-full w-[28%]">
             <div className="boxarrow justify-start h-[45px] ">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 Quick Links
-              </p>
+              </div>
             </div>
             <div className="mt-[22px] sm:w-[100%] w-[250px] text-[#FFF] flex flex-col justify-start ">
               {data?.quick_links != null
@@ -223,9 +223,9 @@ export default function Footer(props) {
           </div>
           <div className="flex flex-col h-full w-[28%] ">
             <div className="boxarrow h-[45px] ">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 News letter
-              </p>
+              </div>
             </div>
             <div className="sm:w-[90%] w-[250px]  text-[#FFF]  ">
               <div className=" text-[#FFF] flex flex-col mt-[30px]">
@@ -283,9 +283,9 @@ export default function Footer(props) {
           </div>
           <div className="hidden flex-col sm:flex h-full w-[28%] ">
             <div className="boxarrow h-[45px] ">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 Social links
-              </p>
+              </div>
             </div>
             <div className="grid grid-cols-4 text-[#FFF] gap-[30px] w-[70%] mt-[40px] justify-start">
               <div className=" ease-in-out transition-transform  w-[32px] h-[35px] text-[35px] flex justify-center items-center hover:text-[#30B1C0] text-white flaticon-pinterest-sign rounded-[4px]"></div>
@@ -298,9 +298,9 @@ export default function Footer(props) {
       </div>
       <div className="flex h-[70px] sm:w-[100%] w-[350px] items-center ">
         <div className="sm:ml-[100px] ml-[70px]">
-          <p className="font-roboto sm:text-[14px] text-[12px] text-white  sm:w-[400px] md:w-[700px] w-[270px]">
+          <div className="font-roboto sm:text-[14px] text-[12px] text-white  sm:w-[400px] md:w-[700px] w-[270px]">
             © {currentYear}, PIE Multilingual Services All Rights Reserved.
-          </p>
+          </div>
         </div>
         <div className="flex  h-[70px] justify-end items-center ">
           <div className="flex absolute right-[125px]  sm:h-[35px]  items-center justify-between bg-[#F60] shadow-sm shadow-[#191919;] rounded-bl-[50px] pl-[14px]">
@@ -329,9 +329,9 @@ export default function Footer(props) {
             ) : (
               <>
                 <div>
-                  <p className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[16px] pr-[6px] font-roboto font-bold ">
+                  <div className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[16px] pr-[6px] font-roboto font-bold ">
                     Privacy policy
-                  </p>
+                  </div>
                 </div>
                 <div>
                   <Link
@@ -350,9 +350,9 @@ export default function Footer(props) {
                   </Link>
                 </div>
                 <div>
-                  <p className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[6px] pr-[6px] font-roboto font-bold ">
+                  <div className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[6px] pr-[6px] font-roboto font-bold ">
                     Sitemap
-                  </p>
+                  </div>
                 </div>
                 <div>
                   <Link
@@ -363,9 +363,9 @@ export default function Footer(props) {
                   </Link>
                 </div>
                 <div>
-                  <p className="text-[#FCFCFF] mr-[10px] text-[14px]  pl-[6px] pr-[6px] font-roboto font-bold ">
+                  <div className="text-[#FCFCFF] mr-[10px] text-[14px]  pl-[6px] pr-[6px] font-roboto font-bold ">
                     Video
-                  </p>
+                  </div>
                 </div>
               </>
             )}
@@ -377,17 +377,17 @@ export default function Footer(props) {
     <div>
       <div className=" h-[450px] w-[100%] bg-[#434146] flex justify-between ">
         <div className="w-[90px] h-[520px] mt-[200px] z-30 relative top-[70px] bg-[#30B1C0] flex self-end rounded-tr-[150px]">
-          <p className="vertical text-[#FFF] text-[23px] font-bold text-center pl-[20px] mt-[10px]">
+          <div className="vertical text-[#FFF] text-[23px] font-bold text-center pl-[20px] mt-[10px]">
             request a quote
-          </p>
+          </div>
         </div>
         <div className=" justify-between w-full px-10 pt-10">
           <div className="w-[28%] ">
             <div className="boxarrow h-[45px]  ml-[]">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 About us
-              </p>
-              <p className=" text-[15px] mt-[30px]  font-roboto">
+              </div>
+              <div className=" text-[15px] mt-[30px]  font-roboto">
                 We, Multilingual Business Service Company, provide valuable
                 insights about what you expect from us. Our Multilingual cum
                 multidisciplinary business service help you to cut your
@@ -396,14 +396,14 @@ export default function Footer(props) {
                 delivering the highest customer satisfaction for long-term
                 success. We are Flexible, Custom Configured and Customer
                 delighted company. We are here to talk anytime.
-              </p>
+              </div>
             </div>
           </div>
           <div className=" w-[28%]">
             <div className="boxarrow justify-start h-[45px] ">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 Quick Links
-              </p>
+              </div>
               <div className="mt-[22px]  flex flex-col justify-start ml-[-15px]">
                 {bottomLinks.map((e, i) => {
                   return (
@@ -438,9 +438,9 @@ export default function Footer(props) {
           </div>
           <div className="w-[28%] ">
             <div className="boxarrow h-[45px] ">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 News letter
-              </p>
+              </div>
               <div>
                 <div className=" flex flex-col mt-[30px]">
                   <label
@@ -485,9 +485,9 @@ export default function Footer(props) {
           </div>
           <div className="w-[28%]">
             <div className="boxarrow h-[45px] ">
-              <p className="text-[20px] font-roboto font-medium text-[#FFF]">
+              <div className="text-[20px] font-roboto font-medium text-[#FFF]">
                 Social links
-              </p>
+              </div>
               <div className="grid grid-cols-4  gap-[30px] ml-[-19px] mt-[40px] justify-start">
                 <div className=" ease-in-out transition-transform  w-[32px] h-[35px] text-[35px] flex justify-center items-center hover:text-[#30B1C0] text-white flaticon-pinterest-sign rounded-[4px]"></div>
                 <div className="w-[32px]  ease-in-out transition-transform  h-[35px] text-[35px] flex justify-center items-center text-white flaticon-youtube-logo hover:text-[#30B1C0] rounded-[4px]"></div>
@@ -500,16 +500,16 @@ export default function Footer(props) {
       </div>
       <div className="flex h-[70px] sm:w-[100%] w-[350px] items-center ">
         <div>
-          <p className="font-roboto  text-[14px] text-white sm:w-[100%] w-[374px]">
+          <div className="font-roboto  text-[14px] text-white sm:w-[100%] w-[374px]">
             © {currentYear}, PIE Multilingual Services All Rights Reserved.
-          </p>
+          </div>
         </div>
         <div className="flex  h-[70px] justify-end items-center ">
           <div className="flex absolute right-[125px] w-[400px] sm:h-[35px]  items-center justify-between bg-[#F60] shadow-sm shadow-[#191919;] rounded-bl-[50px] ">
             <div>
-              <p className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[16px] pr-[6px] font-roboto font-bold ">
+              <div className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[16px] pr-[6px] font-roboto font-bold ">
                 Privacy policy
-              </p>
+              </div>
             </div>
             <div>
               <Link
@@ -528,9 +528,9 @@ export default function Footer(props) {
               </Link>
             </div>
             <div>
-              <p className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[6px] pr-[6px] font-roboto font-bold ">
+              <div className="text-[#FCFCFF] text-[14px] border-r-[1px] border-r-[#FCFCFF] pl-[6px] pr-[6px] font-roboto font-bold ">
                 Sitemap
-              </p>
+              </div>
             </div>
             <div>
               <Link
@@ -541,9 +541,9 @@ export default function Footer(props) {
               </Link>
             </div>
             <div>
-              <p className="text-[#FCFCFF] mr-[10px] text-[14px]  pl-[6px] pr-[6px] font-roboto font-bold ">
+              <div className="text-[#FCFCFF] mr-[10px] text-[14px]  pl-[6px] pr-[6px] font-roboto font-bold ">
                 Video
-              </p>
+              </div>
             </div>
           </div>
         </div>

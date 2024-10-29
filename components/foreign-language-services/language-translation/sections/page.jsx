@@ -292,89 +292,59 @@ export default function Section(props) {
     return <div className="text-[15px]">{parsedContent}</div>;
   };
   Setcontent(data?.content ?? '');
+
+  const renderedContent = Setcontent(apiData2?.content ?? '');
   return data != null && data != undefined ? (
-    <div className="w-[100%] h-[100%] flex flex-col justify-center relative z-10   bg-black items-center">
-      <div className="flex flex-col justify-center items-center mt-[-5px] w-[100%] bg-white z-10">
-        <div className="w-[100%] relative z-[-10] h-[20px] bg-white"></div>
+    <div className="w-full h-full flex flex-col justify-center relative z-10 bg-black items-center">
+      <div className="flex flex-col justify-center items-center mt-[-5px] w-full bg-white z-10">
+        <div className="w-full relative z-[-10] h-[20px] bg-white"></div>
         <div className="md:flex-row flex-col flex md:gap-[20px] bg-white w-full max-w-[1210px] mx-auto mb-[15px]">
           <div className="w-full">
-            <div className=" leading-[25px] sm:max-md:w-[630px] max-xl:w-[95%] mx-auto font-roboto font-normal text-[#333] ">
-              {data.content && <Setcontent e={data.content}></Setcontent>}
+            <div className="leading-[25px] sm:max-md:w-[630px] max-xl:w-[95%] mx-auto font-roboto font-normal text-[#333] ">
+              {renderedContent}
             </div>
-            {apiData2?.All_Service_Card ? (
+            {apiData2?.All_Service_Card && (
               <div className="grid grid-cols-2 gap-y-[40px]">
-                {apiData2.All_Service_Card.map((e, i) => {
-                  return <Allservicecards key={i} data={e}></Allservicecards>;
-                })}
+                {apiData2.All_Service_Card.map((e, i) => (
+                  <Allservicecards key={i} data={e}></Allservicecards>
+                ))}
               </div>
-            ) : (
-              <></>
             )}
-            {apiData2?.results ? (
-              <Results data={apiData2.results}></Results>
-            ) : (
-              <></>
-            )}
+            {apiData2?.results && <Results data={apiData2.results}></Results>}
             {apiData2?.About_company && (
               <Aboutus content={apiData2.About_company} />
             )}
-            {apiData2?.language_card && apiData2.language_card.length > 0 ? (
+            {apiData2?.language_card && apiData2.language_card.length > 0 && (
               <div className="mb-[15px]">
                 {apiData2.language_card.map((e, i) => (
                   <LangCards key={i} num={i} data={e}></LangCards>
                 ))}
               </div>
-            ) : (
-              ''
             )}
             {apiData2?.Industries_We_Serve &&
-            apiData2.Industries_We_Serve.length > 0 ? (
-              <div className="">
-                {apiData2.Industries_We_Serve.map((e, i) => (
-                  <IndustriesCards key={i} num={i} data={e}></IndustriesCards>
-                ))}
-              </div>
-            ) : (
-              ''
-            )}
-            {apiData2?.FAQCards && apiData2.FAQCards.length > 0 ? (
-              <div className="">
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-[15px] my-[20px] mx-auto max-w-[850px]">
-                  {apiData2.FAQCards.map((e, i) => (
-                    <FAQscard key={i} num={i} data={e}></FAQscard>
+              apiData2.Industries_We_Serve.length > 0 && (
+                <div className="">
+                  {apiData2.Industries_We_Serve.map((e, i) => (
+                    <IndustriesCards key={i} num={i} data={e}></IndustriesCards>
                   ))}
                 </div>
+              )}
+            {apiData2?.FAQCards && apiData2.FAQCards.length > 0 && (
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-[15px] my-[20px] mx-auto max-w-[850px]">
+                {apiData2.FAQCards.map((e, i) => (
+                  <FAQscard key={i} num={i} data={e}></FAQscard>
+                ))}
               </div>
-            ) : (
-              ''
             )}
-            {apiData2?.Steps != null ? (
-              <div className="">
-                <div
-                  className={`flex flex-col my-[0px] w-full justify-center items-center gap-[42px]`}
-                >
-                  {apiData2.Steps.map((e, i) => {
-                    return <Steps key={i} num={i} data={e}></Steps>;
-                  })}
-                </div>
+            {apiData2?.Steps != null && (
+              <div className="flex flex-col my-[0px] w-full justify-center items-center gap-[42px]">
+                {apiData2.Steps.map((e, i) => (
+                  <Steps key={i} num={i} data={e}></Steps>
+                ))}
               </div>
-            ) : (
-              ''
             )}
-            {apiData2 != null && apiData2.cv_form == true ? (
-              <div className="">
-                <Careerform></Careerform>
-              </div>
-            ) : (
-              ''
-            )}
-            {apiData2?.HireForm != undefined &&
-            apiData2?.HireForm != null &&
-            apiData2?.HireForm == true ? (
-              <HireForm></HireForm>
-            ) : (
-              <></>
-            )}
+            {apiData2?.cv_form && <Careerform></Careerform>}
+            {apiData2?.HireForm && <HireForm></HireForm>}
             {apiData2?.Advantage_Box != null &&
             apiData2?.Advantage_Box.add == true &&
             apiData2?.Advantage_Box?.cards.length === 0 ? (
@@ -438,9 +408,9 @@ export default function Section(props) {
         </div>
         <BusinessBenefits apiData={apiData2}></BusinessBenefits>
         {data.Development != undefined && data.Development != null ? (
-          <p className=" leading-[25px] font-roboto font-normal text-[#333] max-w-[1210px] mx-auto w-full mt-[40px]">
+          <div className=" leading-[25px] font-roboto font-normal text-[#333] max-w-[1210px] mx-auto w-full mt-[40px]">
             <Setcontent e={data.Development.content}></Setcontent>
-          </p>
+          </div>
         ) : (
           ''
         )}
